@@ -3,1047 +3,350 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arnav Pandita — Electronics & Research Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<title>Arnav Pandita — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Epilogue:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0a0e1a;
-    --surface: #111827;
-    --surface2: #1a2235;
-    --accent: #00d4ff;
-    --accent2: #7c3aed;
-    --accent3: #f59e0b;
-    --text: #e2e8f0;
-    --muted: #64748b;
-    --border: rgba(0, 212, 255, 0.15);
-    --glow: 0 0 40px rgba(0, 212, 255, 0.15);
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  /* === BACKGROUND GRID === */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  /* === NAV === */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(10, 14, 26, 0.85);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
-  }
-
-  .nav-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 1.2rem;
-    color: var(--accent);
-    letter-spacing: -0.5px;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-family: 'DM Mono', monospace;
-    transition: color 0.2s;
-    letter-spacing: 0.05em;
-  }
-
-  .nav-links a:hover { color: var(--accent); }
-
-  /* === SECTIONS === */
-  section {
-    position: relative;
-    z-index: 1;
-  }
-
-  /* === HERO === */
-  #hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 100px 10% 60px;
-    position: relative;
-  }
-
-  .hero-orb {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 70%);
-    top: 50%;
-    right: 5%;
-    transform: translateY(-50%);
-    pointer-events: none;
-  }
-
-  .hero-orb2 {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%);
-    bottom: 10%;
-    left: -5%;
-    pointer-events: none;
-  }
-
-  .hero-tag {
-    display: inline-block;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--accent);
-    border: 1px solid var(--accent);
-    padding: 4px 14px;
-    border-radius: 100px;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.1em;
-    animation: fadeUp 0.6s ease both;
-  }
-
-  .hero-name {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    line-height: 1.0;
-    letter-spacing: -2px;
-    animation: fadeUp 0.6s 0.1s ease both;
-  }
-
-  .hero-name span {
-    display: block;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .hero-sub {
-    margin-top: 1.5rem;
-    font-size: 1.1rem;
-    color: var(--muted);
-    max-width: 560px;
-    line-height: 1.7;
-    animation: fadeUp 0.6s 0.2s ease both;
-  }
-
-  .hero-sub strong { color: var(--text); font-weight: 500; }
-
-  .hero-cta {
-    margin-top: 2.5rem;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    animation: fadeUp 0.6s 0.3s ease both;
-  }
-
-  .btn-primary {
-    background: var(--accent);
-    color: var(--bg);
-    padding: 12px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .btn-primary:hover {
-    background: #00b8d9;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.3);
-  }
-
-  .btn-outline {
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 12px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 0.9rem;
-    transition: all 0.2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .btn-outline:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    transform: translateY(-2px);
-  }
-
-  .hero-stats {
-    margin-top: 4rem;
-    display: flex;
-    gap: 3rem;
-    flex-wrap: wrap;
-    animation: fadeUp 0.6s 0.4s ease both;
-  }
-
-  .stat-item {}
-  .stat-num {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 2.2rem;
-    color: var(--accent);
-    line-height: 1;
-  }
-  .stat-label {
-    font-size: 0.8rem;
-    color: var(--muted);
-    margin-top: 4px;
-    font-family: 'DM Mono', monospace;
-    letter-spacing: 0.05em;
-  }
-
-  /* === SHARED SECTION STYLES === */
-  .section-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 100px 5%;
-  }
-
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--accent);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
-
-  .section-title {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-    letter-spacing: -1px;
-    margin-bottom: 3rem;
-  }
-
-  /* === WHY HIRE === */
-  #why {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .why-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
-  }
-
-  .why-card {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 2rem;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .why-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    transform: scaleX(0);
-    transition: transform 0.3s;
-    transform-origin: left;
-  }
-
-  .why-card:hover::before { transform: scaleX(1); }
-  .why-card:hover { transform: translateY(-4px); box-shadow: var(--glow); }
-
-  .why-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  .why-card h3 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-bottom: 0.6rem;
-    color: var(--text);
-  }
-
-  .why-card p {
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.7;
-  }
-
-  /* === ACADEMICS === */
-  .academics-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-
-  @media (max-width: 700px) {
-    .academics-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
-    #hero { padding: 100px 5% 60px; }
-    .hero-stats { gap: 2rem; }
-  }
-
-  .acad-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.8rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    transition: all 0.2s;
-  }
-
-  .acad-card:hover {
-    border-color: rgba(0, 212, 255, 0.4);
-    transform: translateY(-2px);
-  }
-
-  .acad-level {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--accent);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .acad-title {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 1.15rem;
-  }
-
-  .acad-inst {
-    font-size: 0.88rem;
-    color: var(--muted);
-  }
-
-  .acad-score {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 1.8rem;
-    color: var(--accent);
-    margin-top: 0.5rem;
-  }
-
-  .acad-year {
-    font-size: 0.8rem;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-  }
-
-  /* Semester grades table */
-  .semester-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-  }
-
-  .semester-table th {
-    text-align: left;
-    padding: 10px 16px;
-    background: var(--surface2);
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .semester-table td {
-    padding: 12px 16px;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    color: var(--text);
-  }
-
-  .semester-table tr:hover td { background: rgba(0,212,255,0.03); }
-
-  .sgpi-badge {
-    display: inline-block;
-    background: rgba(0,212,255,0.1);
-    color: var(--accent);
-    padding: 3px 10px;
-    border-radius: 6px;
-    font-family: 'DM Mono', monospace;
-    font-weight: 500;
-    font-size: 0.85rem;
-  }
-
-  /* === PROJECTS === */
-  #projects { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .project-card {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 2rem;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .project-card::after {
-    content: '';
-    position: absolute;
-    bottom: -40px; right: -40px;
-    width: 120px; height: 120px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0,212,255,0.06) 0%, transparent 70%);
-    transition: all 0.3s;
-  }
-
-  .project-card:hover { transform: translateY(-4px); border-color: rgba(0,212,255,0.35); box-shadow: var(--glow); }
-
-  .project-tag {
-    display: inline-block;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--accent2);
-    border: 1px solid rgba(124,58,237,0.3);
-    padding: 3px 10px;
-    border-radius: 100px;
-    margin-bottom: 1rem;
-    letter-spacing: 0.05em;
-  }
-
-  .project-card h3 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-bottom: 0.7rem;
-  }
-
-  .project-card p {
-    font-size: 0.88rem;
-    color: var(--muted);
-    line-height: 1.7;
-  }
-
-  .project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 1.2rem;
-  }
-
-  .tech-pill {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--text);
-    background: var(--surface2);
-    padding: 3px 10px;
-    border-radius: 6px;
-    border: 1px solid rgba(255,255,255,0.06);
-  }
-
-  /* === RESEARCH === */
-  .research-box {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 3rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .research-box::before {
-    content: 'IEEE';
-    position: absolute;
-    top: 2rem; right: 2rem;
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 4rem;
-    color: rgba(0,212,255,0.06);
-    letter-spacing: -3px;
-  }
-
-  .research-box h3 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    max-width: 80%;
-  }
-
-  .research-meta {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--muted);
-    margin-bottom: 1.5rem;
-  }
-
-  .research-abstract {
-    font-size: 0.92rem;
-    color: var(--muted);
-    line-height: 1.8;
-    max-width: 800px;
-    margin-bottom: 1.5rem;
-  }
-
-  .research-keywords {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .kw-pill {
-    background: rgba(124,58,237,0.12);
-    color: rgba(167, 139, 250, 1);
-    border: 1px solid rgba(124,58,237,0.25);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.73rem;
-    padding: 4px 12px;
-    border-radius: 100px;
-    letter-spacing: 0.04em;
-  }
-
-  /* === SKILLS === */
-  #skills { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .skill-group {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.5rem;
-  }
-
-  .skill-group h4 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 0.85rem;
-    color: var(--accent);
-    margin-bottom: 1rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-
-  .skill-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-
-  .skill-pill {
-    background: var(--surface2);
-    color: var(--text);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.78rem;
-    padding: 5px 12px;
-    border-radius: 6px;
-    border: 1px solid rgba(255,255,255,0.06);
-  }
-
-  /* === CERTIFICATIONS === */
-  .certs-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
-  }
-
-  .cert-item {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.2rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    transition: all 0.2s;
-    text-decoration: none;
-  }
-
-  .cert-item:hover {
-    border-color: rgba(0,212,255,0.4);
-    transform: translateX(4px);
-  }
-
-  .cert-icon {
-    width: 40px; height: 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-  }
-
-  .cert-icon.forage { background: rgba(245,158,11,0.15); }
-  .cert-icon.hp { background: rgba(0,212,255,0.1); }
-
-  .cert-info {}
-  .cert-name { font-size: 0.9rem; font-weight: 500; color: var(--text); }
-  .cert-provider { font-size: 0.78rem; color: var(--muted); font-family: 'DM Mono', monospace; margin-top: 2px; }
-
-  /* === CONTACT === */
-  #contact { text-align: center; }
-
-  .contact-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 4rem 3rem;
-    max-width: 700px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .contact-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at center, rgba(0,212,255,0.05) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .contact-card h2 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 2.2rem;
-    letter-spacing: -1px;
-    margin-bottom: 1rem;
-  }
-
-  .contact-card p {
-    color: var(--muted);
-    margin-bottom: 2.5rem;
-    font-size: 1rem;
-    line-height: 1.7;
-  }
-
-  .contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 24px;
-    border-radius: 10px;
-    font-size: 0.88rem;
-    text-decoration: none;
-    transition: all 0.2s;
-    font-family: 'DM Mono', monospace;
-  }
-
-  .contact-link.email { background: rgba(0,212,255,0.1); color: var(--accent); border: 1px solid rgba(0,212,255,0.2); }
-  .contact-link.linkedin { background: rgba(10,102,194,0.15); color: #60a5fa; border: 1px solid rgba(10,102,194,0.3); }
-  .contact-link.phone { background: rgba(245,158,11,0.1); color: var(--accent3); border: 1px solid rgba(245,158,11,0.2); }
-
-  .contact-link:hover { transform: translateY(-2px); filter: brightness(1.2); }
-
-  /* === FOOTER === */
-  footer {
-    text-align: center;
-    padding: 2rem;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.78rem;
-    border-top: 1px solid var(--border);
-    position: relative;
-    z-index: 1;
-  }
-
-  /* === DIVIDER === */
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 0;
-  }
-
-  /* === ANIMATIONS === */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .fade-in {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* === JIO CTA BANNER === */
-  .jio-banner {
-    background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(124,58,237,0.08));
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 2.5rem 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
-
-  .jio-banner-text h3 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 1.3rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .jio-banner-text p {
-    font-size: 0.88rem;
-    color: var(--muted);
-  }
-
-  .jio-tag {
-    display: inline-block;
-    background: rgba(245,158,11,0.12);
-    color: var(--accent3);
-    border: 1px solid rgba(245,158,11,0.25);
-    padding: 4px 14px;
-    border-radius: 100px;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.73rem;
-    letter-spacing: 0.06em;
-    margin-bottom: 0.7rem;
-  }
-
-  /* === SECTION SEPARATOR === */
-  .sep {
-    width: 40px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    border-radius: 2px;
-    margin-bottom: 1.5rem;
-  }
+:root{--bg:#faf8f5;--bg2:#f0ece4;--dark:#0f0d0a;--text:#1a1714;--muted:#6b6560;--pink:#ff4d8d;--yellow:#ffd93d;--blue:#3d7eff;--green:#00c896;--orange:#ff6b35;--purple:#8b5cf6;--teal:#06b6d4;--border:#e0dbd2}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Epilogue',sans-serif;overflow-x:hidden}
+
+nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:100;background:var(--dark);border-radius:100px;padding:10px 26px;display:flex;align-items:center;gap:2rem;box-shadow:0 8px 32px rgba(0,0,0,0.25);white-space:nowrap}
+.nl{font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:1rem;color:var(--yellow)}
+nav ul{display:flex;gap:1.4rem;list-style:none}
+nav ul a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.78rem;font-family:'Space Mono',monospace;transition:color 0.2s}
+nav ul a:hover{color:var(--yellow)}
+
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:78px}
+.hl{background:var(--dark);padding:80px 60px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.hl::after{content:'';position:absolute;bottom:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:var(--pink);opacity:0.13}
+.hr{background:var(--yellow);padding:80px 60px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.hr::before{content:'AP';position:absolute;bottom:-30px;right:10px;font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:13rem;color:rgba(0,0,0,0.07);line-height:1;letter-spacing:-8px}
+.hrole{display:inline-block;background:var(--green);color:var(--dark);font-family:'Space Mono',monospace;font-size:0.7rem;padding:6px 16px;border-radius:100px;margin-bottom:1.5rem;width:fit-content;font-weight:700}
+.hname{font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:clamp(3rem,5.5vw,5rem);color:#fff;line-height:0.93;letter-spacing:-3px;margin-bottom:1.5rem}
+.hname .acc{color:var(--yellow)}
+.hsub{color:rgba(255,255,255,0.62);font-size:0.93rem;line-height:1.75;max-width:380px;margin-bottom:2.5rem}
+.hcta{display:flex;gap:1rem;flex-wrap:wrap}
+.btnl{background:#fff;color:var(--dark);padding:12px 28px;border-radius:100px;text-decoration:none;font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:0.88rem;transition:all 0.2s}
+.btnl:hover{background:var(--yellow);transform:translateY(-2px)}
+.btng{border:1.5px solid rgba(255,255,255,0.3);color:#fff;padding:12px 28px;border-radius:100px;text-decoration:none;font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:0.88rem;transition:all 0.2s}
+.btng:hover{border-color:var(--yellow);color:var(--yellow)}
+.hri{position:relative;z-index:1}
+.hri h2{font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:1.3rem;color:var(--dark);margin-bottom:1.8rem}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem}
+.sb{background:rgba(0,0,0,0.1);border-radius:16px;padding:1.2rem 1.5rem}
+.sn{font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:2.4rem;color:var(--dark);line-height:1}
+.sl{font-size:0.72rem;color:rgba(0,0,0,0.5);font-family:'Space Mono',monospace;margin-top:4px}
+.ltag{display:flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:0.73rem;color:var(--dark)}
+.dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(1.4)}}
+
+.sec{padding:96px 8%}
+.slbl{font-family:'Space Mono',monospace;font-size:0.68rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem}
+.stitle{font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:clamp(2rem,4vw,3rem);letter-spacing:-2px;line-height:1;margin-bottom:2.5rem}
+
+/* ABOUT */
+#about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about-text p{font-size:0.95rem;color:var(--muted);line-height:1.85;margin-bottom:1.2rem}
+.about-text p strong{color:var(--text)}
+.about-facts{display:flex;flex-direction:column;gap:1rem}
+.af{background:#fff;border-radius:16px;padding:1.2rem 1.5rem;border:1.5px solid var(--border);display:flex;align-items:center;gap:1rem}
+.af-icon{font-size:1.5rem;flex-shrink:0}
+.af-label{font-family:'Space Mono',monospace;font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em}
+.af-val{font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:0.95rem;margin-top:2px}
+
+/* WHY */
+#why{background:var(--dark)}
+#why .slbl{color:rgba(255,255,255,0.35)}
+#why .stitle{color:#fff}
+.wg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.wc{border-radius:20px;padding:2rem;transition:transform 0.2s}
+.wc:hover{transform:translateY(-5px)}
+.wc.p{background:var(--pink)}.wc.b{background:var(--blue)}.wc.g{background:var(--green)}
+.wc.o{background:var(--orange)}.wc.v{background:var(--purple)}.wc.y{background:var(--yellow)}
+.wi{font-size:1.8rem;display:block}
+.wc h3{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.05rem;color:#fff;margin:0.8rem 0 0.5rem}
+.wc p{font-size:0.85rem;color:rgba(255,255,255,0.82);line-height:1.7}
+.wc.y h3{color:var(--dark)}.wc.y p{color:rgba(0,0,0,0.62)}
+
+/* ACADEMICS */
+#academics{background:var(--bg2)}
+.edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-bottom:2rem}
+.ec{background:#fff;border-radius:20px;padding:2rem;border:1.5px solid var(--border);position:relative;overflow:hidden;transition:all 0.2s}
+.ec:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.07)}
+.ec::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.ec.ug::before{background:var(--blue)}.ec.res::before{background:var(--purple)}
+.ec-lv{font-family:'Space Mono',monospace;font-size:0.67rem;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.4rem}
+.ec-title{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.05rem;margin-bottom:0.3rem}
+.ec-inst{font-size:0.82rem;color:var(--muted);margin-bottom:1rem;line-height:1.5}
+.ec-score{font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:2rem;letter-spacing:-1px}
+.ec.ug .ec-score{color:var(--blue)}.ec.res .ec-score{color:var(--purple);font-size:1.1rem}
+.sem-box{background:#fff;border-radius:20px;border:1.5px solid var(--border);overflow:hidden}
+.sem-hd{background:var(--dark);color:#fff;padding:1.2rem 2rem;font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:0.95rem}
+table.st{width:100%;border-collapse:collapse;font-size:0.85rem}
+.st th{text-align:left;padding:11px 20px;background:#f7f5f0;color:var(--muted);font-family:'Space Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;border-bottom:1.5px solid var(--border)}
+.st td{padding:13px 20px;border-bottom:1px solid #f0ece4}
+.st tr:last-child td{border-bottom:none}
+.st tr:hover td{background:#faf8f5}
+.sp{display:inline-block;padding:3px 12px;border-radius:100px;font-family:'Space Mono',monospace;font-weight:700;font-size:0.76rem}
+.sp6{background:#e8f5e9;color:#2e7d32}.sp5{background:#fff3e0;color:#e65100}
+
+/* PROJECTS */
+#projects{background:var(--bg)}
+.pg{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+.pc{background:#fff;border-radius:20px;border:1.5px solid var(--border);padding:2rem;transition:all 0.25s}
+.pc:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.09)}
+.pc.feat{grid-column:1/-1;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;background:var(--dark)}
+.pn{font-family:'Space Mono',monospace;font-size:0.67rem;color:var(--muted);letter-spacing:0.1em;margin-bottom:0.8rem}
+.pc.feat .pn{color:rgba(255,255,255,0.35)}
+.ptag{display:inline-block;font-family:'Space Mono',monospace;font-size:0.67rem;padding:4px 12px;border-radius:100px;margin-bottom:0.8rem}
+.ptag.iot{background:#e0f7fa;color:#006064}.ptag.lo{background:#f3e5f5;color:#4a148c}
+.ptag.fp{background:#fff3e0;color:#e65100}.ptag.wb{background:#e8f5e9;color:#1b5e20}
+.ptag.ft{background:var(--pink);color:#fff}
+.pc h3{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:0.6rem;letter-spacing:-0.3px}
+.pc.feat h3{color:#fff;font-size:1.4rem}
+.pc p{font-size:0.85rem;color:var(--muted);line-height:1.7;margin-bottom:1.2rem}
+.pc.feat p{color:rgba(255,255,255,0.58)}
+.tr{display:flex;flex-wrap:wrap;gap:0.4rem}
+.tc{background:#f0ece4;color:var(--text);font-family:'Space Mono',monospace;font-size:0.68rem;padding:4px 12px;border-radius:100px;border:1px solid var(--border)}
+.pc.feat .tc{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75);border-color:rgba(255,255,255,0.12)}
+.pv{font-size:6rem;opacity:0.2}
+
+/* RESEARCH */
+#research{background:var(--blue)}
+#research .slbl{color:rgba(255,255,255,0.45)}
+#research .stitle{color:#fff}
+.rcard{background:rgba(255,255,255,0.13);border-radius:24px;padding:3rem;border:1px solid rgba(255,255,255,0.2)}
+.ibadge{display:inline-block;background:var(--yellow);color:var(--dark);font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:0.78rem;padding:6px 16px;border-radius:100px;margin-bottom:1.5rem}
+.rcard h3{font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;letter-spacing:-1px;margin-bottom:0.5rem}
+.rmeta{font-family:'Space Mono',monospace;font-size:0.7rem;color:rgba(255,255,255,0.55);margin-bottom:1.5rem}
+.rabst{color:rgba(255,255,255,0.8);font-size:0.9rem;line-height:1.8;margin-bottom:2rem}
+.kws{display:flex;flex-wrap:wrap;gap:0.5rem}
+.kw{background:rgba(255,255,255,0.13);color:#fff;font-family:'Space Mono',monospace;font-size:0.68rem;padding:5px 14px;border-radius:100px;border:1px solid rgba(255,255,255,0.18)}
+
+/* AI TOOLS */
+#aitools{background:var(--dark)}
+#aitools .slbl{color:rgba(255,255,255,0.35)}
+#aitools .stitle{color:#fff}
+.ai-intro{color:rgba(255,255,255,0.5);font-size:0.9rem;line-height:1.75;max-width:580px;margin-bottom:3rem;margin-top:-1.5rem}
+.aig{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.aic{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:1.8rem 1.5rem;text-align:center;transition:all 0.25s;position:relative;overflow:hidden}
+.aic:hover{transform:translateY(-5px);background:rgba(255,255,255,0.09);border-color:rgba(255,255,255,0.18)}
+.aic.chatgpt{border-top:3px solid #10a37f}
+.aic.claude{border-top:3px solid #d97706}
+.aic.gemini{border-top:3px solid #4285f4}
+.aic.copilot{border-top:3px solid #6366f1}
+.aic.dalle{border-top:3px solid #ec4899}
+.aic.perplexity{border-top:3px solid #20b2aa}
+.aic.grammarly{border-top:3px solid #15c39a}
+.ai-logo{font-size:2.5rem;margin-bottom:1rem;display:block}
+.ai-name{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1rem;color:#fff;margin-bottom:0.4rem}
+.ai-use{font-size:0.75rem;color:rgba(255,255,255,0.48);font-family:'Space Mono',monospace;margin-bottom:1rem;line-height:1.55}
+.ai-tags{display:flex;flex-wrap:wrap;gap:0.3rem;justify-content:center}
+.aitag{font-family:'Space Mono',monospace;font-size:0.62rem;padding:3px 9px;border-radius:100px;border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.55)}
+.ai-badge{display:inline-block;font-family:'Space Mono',monospace;font-size:0.62rem;padding:3px 10px;border-radius:100px;margin-top:0.8rem;background:rgba(0,200,150,0.15);color:var(--green);border:1px solid rgba(0,200,150,0.25)}
+
+/* SKILLS */
+#skills{background:var(--bg2)}
+.sbento{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.skb{background:#fff;border-radius:20px;padding:1.5rem;border:1.5px solid var(--border)}
+.skb h4{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:0.85rem;margin-bottom:1rem;display:flex;align-items:center;gap:8px}
+.sdot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.pills{display:flex;flex-wrap:wrap;gap:0.4rem}
+.pill{background:#f0ece4;color:var(--text);font-family:'Space Mono',monospace;font-size:0.68rem;padding:5px 12px;border-radius:100px}
+
+/* CERTS */
+#certs{background:var(--bg)}
+.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.cc{background:#fff;border-radius:16px;border:1.5px solid var(--border);padding:1.4rem;display:flex;gap:1rem;align-items:flex-start;text-decoration:none;color:inherit;transition:all 0.2s}
+.cc:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.07);border-color:var(--blue)}
+.cicon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.cicon.f{background:#fff8e1}.cicon.h{background:#e3f2fd}
+.cname{font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:3px}
+.cby{font-family:'Space Mono',monospace;font-size:0.68rem;color:var(--muted)}
+
+/* CONTACT */
+#contact{background:var(--dark);padding:100px 8%;text-align:center}
+#contact .slbl{color:rgba(255,255,255,0.35)}
+#contact .stitle{color:#fff}
+.csub{color:rgba(255,255,255,0.4);font-size:0.83rem;font-family:'Space Mono',monospace;margin-bottom:0.5rem}
+.cblob{display:inline-block;background:var(--yellow);color:var(--dark);font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:clamp(1.1rem,2.5vw,1.8rem);letter-spacing:-0.5px;padding:1.2rem 2.5rem;border-radius:100px;margin:2rem 0;text-decoration:none;transition:all 0.2s}
+.cblob:hover{background:var(--pink);color:#fff;transform:scale(1.03) rotate(-1deg)}
+.cls{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.cl{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:100px;font-family:'Cabinet Grotesk',sans-serif;font-weight:700;font-size:0.85rem;text-decoration:none;transition:all 0.2s;border:1.5px solid rgba(255,255,255,0.15);color:#fff}
+.cl:hover{background:rgba(255,255,255,0.08);transform:translateY(-2px)}
+
+footer{background:#080706;text-align:center;padding:1.5rem;color:rgba(255,255,255,0.22);font-family:'Space Mono',monospace;font-size:0.68rem}
+
+.rv{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease}
+.rv.show{opacity:1;transform:translateY(0)}
+
+@media(max-width:960px){
+  #hero{grid-template-columns:1fr}
+  .wg,.about-grid{grid-template-columns:1fr}
+  .edu-grid,.pg{grid-template-columns:1fr}
+  .pc.feat{grid-template-columns:1fr}
+  .sbento{grid-template-columns:1fr 1fr}
+  .aig{grid-template-columns:repeat(2,1fr)}
+  nav ul{display:none}
+  .hl,.hr{padding:60px 30px}
+}
+@media(max-width:600px){
+  .wg,.sbento,.aig{grid-template-columns:1fr}
+  .sec{padding:70px 5%}
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="nav-logo">AP.</div>
-  <ul class="nav-links">
+  <div class="nl">AP.</div>
+  <ul>
     <li><a href="#about">about</a></li>
     <li><a href="#academics">academics</a></li>
     <li><a href="#projects">projects</a></li>
     <li><a href="#research">research</a></li>
-    <li><a href="#certifications">certs</a></li>
+    <li><a href="#aitools">ai tools</a></li>
+    <li><a href="#skills">skills</a></li>
     <li><a href="#contact">contact</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-orb"></div>
-  <div class="hero-orb2"></div>
-  <div>
-    <div class="hero-tag">🎓 Jio Institute Summer School Applicant</div>
-    <h1 class="hero-name">
-      Arnav<br>
-      <span>Pandita</span>
-    </h1>
-    <p class="hero-sub">
-      <strong>Electronics & Telecommunication Engineer</strong> — building at the intersection of 
-      IoT, embedded systems, FPGA, and AI. Currently in my 3rd year at TSEC, Mumbai University, 
-      driven by research and real-world engineering.
-    </p>
-    <div class="hero-cta">
-      <a href="mailto:Arnav.pandita011005@gmail.com" class="btn-primary">
-        ✉ Get in Touch
-      </a>
-      <a href="https://www.linkedin.com/in/arnav-pandita-59a616397" target="_blank" class="btn-outline">
-        ↗ LinkedIn
-      </a>
+  <div class="hl">
+    <div class="hrole">⚡ Electronics & Telecommunication Engineer</div>
+    <h1 class="hname">Arnav<br><span class="acc">Pandita.</span></h1>
+    <p class="hsub">Building IoT systems, wireless communication, FPGA solutions & AI-powered workflows. 3rd year B.E. student at TSEC, Mumbai University — driven by research and real engineering.</p>
+    <div class="hcta">
+      <a href="mailto:Arnav.pandita011005@gmail.com" class="btnl">✉ Get in Touch</a>
+      <a href="https://www.linkedin.com/in/arnav-pandita-59a616397" target="_blank" class="btng">↗ LinkedIn</a>
     </div>
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num">6.10</div>
-        <div class="stat-label">Current CGPA</div>
+  </div>
+  <div class="hr">
+    <div class="hri">
+      <h2>At a Glance</h2>
+      <div class="sg">
+        <div class="sb"><div class="sn">6.10</div><div class="sl">CGPA</div></div>
+        <div class="sb"><div class="sn">5</div><div class="sl">Semesters</div></div>
+        <div class="sb"><div class="sn">3+</div><div class="sl">Projects</div></div>
+        <div class="sb"><div class="sn">7</div><div class="sl">AI Tools</div></div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">5</div>
-        <div class="stat-label">Semesters Completed</div>
+      <div class="ltag"><span class="dot"></span>Available · Mumbai, India · +91 96223 99321</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec">
+    <div class="slbl rv">01 / About Me</div>
+    <h2 class="stitle rv">Who I Am</h2>
+    <div class="about-grid rv">
+      <div class="about-text">
+        <p>I'm <strong>Arnav Pandita</strong>, a 3rd-year Electronics & Telecommunication Engineering student at Thadomal Shahani Engineering College, Mumbai. I'm passionate about bridging the gap between hardware and software — from designing embedded IoT systems to integrating AI tools into everyday engineering workflows.</p>
+        <p>My work spans <strong>IoT, wireless communication, FPGA design, and web development</strong>. I've built real working prototypes like the Climate Guard environmental monitoring system and a LoRa-based wireless setup — engineering that goes beyond the classroom.</p>
+        <p>I also have a research side — I've authored an <strong>IEEE-format synopsis</strong> on semiconductor materials, and I stay ahead of the curve by actively using 7 AI tools daily to supercharge my productivity and learning.</p>
+        <p>Outside academics, I compete as a <strong>semi-professional esports player</strong> under Blind Esports, where high-pressure strategy and teamwork are second nature.</p>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">5+</div>
-        <div class="stat-label">Certifications</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Technical Projects</div>
+      <div class="about-facts">
+        <div class="af"><span class="af-icon">🎓</span><div><div class="af-label">Degree</div><div class="af-val">B.E. Electronics & Telecom, TSEC</div></div></div>
+        <div class="af"><span class="af-icon">📍</span><div><div class="af-label">Location</div><div class="af-val">Mumbai, Maharashtra, India</div></div></div>
+        <div class="af"><span class="af-icon">🔬</span><div><div class="af-label">Interests</div><div class="af-val">IoT · FPGA · AI · Wireless Systems</div></div></div>
+        <div class="af"><span class="af-icon">🎮</span><div><div class="af-label">Esports</div><div class="af-val">Semi-Pro · Blind Esports</div></div></div>
+        <div class="af"><span class="af-icon">📧</span><div><div class="af-label">Email</div><div class="af-val">Arnav.pandita011005@gmail.com</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- WHY HIRE -->
-<section id="about">
-  <div class="section-inner">
-    <div class="jio-banner fade-in">
-      <div class="jio-banner-text">
-        <div class="jio-tag">🏫 JIO INSTITUTE SUMMER SCHOOL 2025</div>
-        <h3>Why I'm the Right Fit</h3>
-        <p>Electronics, research mindset, and hands-on systems engineering — tailored for innovation.</p>
-      </div>
-      <a href="mailto:summer.school@jioinstitute.edu.in" class="btn-primary">Apply Now ↗</a>
-    </div>
-
-    <div class="section-label">About Me</div>
-    <h2 class="section-title">Engineer. Researcher.<br>Problem Solver.</h2>
-    <div class="sep"></div>
-
-    <div class="why-grid">
-      <div class="why-card fade-in">
-        <div class="why-icon">🔬</div>
-        <h3>Research-Oriented Mindset</h3>
-        <p>Published an IEEE-format synopsis on Semiconductor Materials for Emerging & Integrated Technologies — demonstrating ability to conduct structured, referenced technical research aligned with Jio Institute's innovation focus.</p>
-      </div>
-      <div class="why-card fade-in">
-        <div class="why-icon">⚡</div>
-        <h3>Hands-On Systems Engineering</h3>
-        <p>Built real IoT systems (Climate Guard), designed LoRa wireless communication setups, and programmed FPGA-based automation — bridging theory with tangible, working prototypes.</p>
-      </div>
-      <div class="why-card fade-in">
-        <div class="why-icon">🧠</div>
-        <h3>AI & Data Analytics Skills</h3>
-        <p>Completed industry simulations in GenAI-powered data analytics and software engineering through Forage. Applied data interpretation and exploratory data analysis with Python and SQL.</p>
-      </div>
-      <div class="why-card fade-in">
-        <div class="why-icon">🌐</div>
-        <h3>Multidisciplinary Technical Base</h3>
-        <p>Proficient across Python, C++, embedded systems, web development, and databases — uniquely positioned to work across hardware-software integrated research projects.</p>
-      </div>
-      <div class="why-card fade-in">
-        <div class="why-icon">🏆</div>
-        <h3>Continuous Self-Development</h3>
-        <p>Actively upskilling via HP LIFE (AI, Cybersecurity, Data Science) and Forage job simulations with top companies — showing initiative beyond the classroom.</p>
-      </div>
-      <div class="why-card fade-in">
-        <div class="why-icon">🤝</div>
-        <h3>Teamwork & Strategic Thinking</h3>
-        <p>Semi-professional esports player under Blind Esports — honing team coordination, rapid decision-making under pressure, and strategic thinking that translates directly to collaborative research environments.</p>
-      </div>
+<section id="why">
+  <div class="sec">
+    <div class="slbl rv">02 / Strengths</div>
+    <h2 class="stitle rv">What I Bring<br>to the Table</h2>
+    <div class="wg">
+      <div class="wc p rv"><span class="wi">🔬</span><h3>Research Mindset</h3><p>Published an IEEE-format synopsis on Semiconductor Materials — structured research, literature review, and analytical thinking that translates across academic and industry settings.</p></div>
+      <div class="wc b rv"><span class="wi">⚡</span><h3>Hands-On Engineering</h3><p>Built real working IoT systems, LoRa wireless communication, and FPGA automation. Actual deployed prototypes — not just academic exercises.</p></div>
+      <div class="wc g rv"><span class="wi">🤖</span><h3>AI-Native Workflow</h3><p>Daily user of 7 AI tools including ChatGPT, Claude, Gemini, and GitHub Copilot — integrating AI into research, coding, writing, and problem solving.</p></div>
+      <div class="wc o rv"><span class="wi">🌐</span><h3>Cross-Disciplinary</h3><p>From embedded C and Arduino to Python, SQL, and web development — comfortable contributing across hardware and software engineering stacks.</p></div>
+      <div class="wc v rv"><span class="wi">📈</span><h3>Self-Driven Learner</h3><p>HP LIFE certifications in AI, cybersecurity, and data science. Forage job simulations. Constantly upskilling beyond the curriculum because curiosity doesn't stop at class hours.</p></div>
+      <div class="wc y rv"><span class="wi">🎮</span><h3>Team Player</h3><p>Semi-professional esports athlete — high-pressure teamwork, rapid strategic decisions, and clear communication under stress. Skills that translate directly to any collaborative environment.</p></div>
     </div>
   </div>
 </section>
 
 <!-- ACADEMICS -->
 <section id="academics">
-  <div class="section-inner">
-    <div class="section-label">Academic Journey</div>
-    <h2 class="section-title">Education & Grades</h2>
-    <div class="sep"></div>
-
-    <div class="academics-grid fade-in">
-      <div class="acad-card">
-        <div class="acad-level">Undergraduate · Ongoing</div>
-        <div class="acad-title">B.E. Electronics & Telecommunication</div>
-        <div class="acad-inst">Thadomal Shahani Engineering College (TSEC)<br>Mumbai University · 2023–2027</div>
-        <div class="acad-score">6.10 CGPA</div>
-        <div class="acad-year">Seat No: 243031 · C Scheme</div>
+  <div class="sec">
+    <div class="slbl rv">03 / Academics</div>
+    <h2 class="stitle rv">Education &amp;<br>Grades</h2>
+    <div class="edu-grid rv">
+      <div class="ec ug">
+        <div class="ec-lv">Undergraduate · Ongoing · 2023–2027</div>
+        <div class="ec-title">B.E. Electronics &amp; Telecommunication Engineering</div>
+        <div class="ec-inst">Thadomal Shahani Engineering College (TSEC)<br>Mumbai University · Seat No: 243031 · 2019 C Scheme</div>
+        <div class="ec-score">6.10 CGPA</div>
       </div>
-      <div class="acad-card">
-        <div class="acad-level">Class XII · CBSE · 2023</div>
-        <div class="acad-title">Senior School Certificate</div>
-        <div class="acad-inst">VB Public H.S. School, Udheywalla, Jammu J&K</div>
-        <div class="acad-score">81%</div>
-        <div class="acad-year">Physics 54 · Math 55 · Chemistry 60 · English 63 · Phy Ed 84</div>
-      </div>
-      <div class="acad-card">
-        <div class="acad-level">Class X · CBSE · 2021</div>
-        <div class="acad-title">Secondary School Certificate</div>
-        <div class="acad-inst">GD Goenka Public School, Gajansoo, Jammu J&K</div>
-        <div class="acad-score">87%</div>
-        <div class="acad-year">Science 81 · Math 80 · Hindi 83 · English 74 · SST 76</div>
-      </div>
-      <div class="acad-card">
-        <div class="acad-level">Research Paper</div>
-        <div class="acad-title">IEEE Synopsis — Semiconductors</div>
-        <div class="acad-inst">Dept. of E&TC, Mumbai University (TSEC)</div>
-        <div class="acad-score" style="font-size:1.2rem; color: var(--accent2);">Published</div>
-        <div class="acad-year">Semiconductor Materials for Emerging & Integrated Technologies</div>
+      <div class="ec res">
+        <div class="ec-lv">IEEE Research · 2025</div>
+        <div class="ec-title">Research Synopsis — Semiconductors</div>
+        <div class="ec-inst">Dept. of E&TC, Mumbai University (TSEC)<br>Semiconductor Materials for Emerging &amp; Integrated Technologies</div>
+        <div class="ec-score">IEEE Format · Published</div>
       </div>
     </div>
-
-    <!-- Semester Performance -->
-    <h3 style="font-family:'Syne',sans-serif; font-weight:700; font-size:1.3rem; margin-top:3rem; margin-bottom:0.5rem;" class="fade-in">Semester-wise Performance</h3>
-    <p style="color:var(--muted); font-size:0.88rem; margin-bottom:1rem;" class="fade-in">Thadomal Shahani Engineering College, Mumbai University · B.E. EXTC</p>
-
-    <table class="semester-table fade-in">
-      <thead>
-        <tr>
-          <th>Semester</th>
-          <th>Exam</th>
-          <th>Marks</th>
-          <th>Credits</th>
-          <th>SGPI</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Sem I (FE C-Scheme)</td>
-          <td>Summer 2024</td>
-          <td>385/675</td>
-          <td>18.00</td>
-          <td><span class="sgpi-badge">6.06</span></td>
-          <td>✅ Successful</td>
-        </tr>
-        <tr>
-          <td>Sem II (FE C-Scheme)</td>
-          <td>Winter 2024</td>
-          <td>424/725</td>
-          <td>20.00</td>
-          <td><span class="sgpi-badge">6.43</span></td>
-          <td>✅ Successful</td>
-        </tr>
-        <tr>
-          <td>Sem III (SE, 2019 C)</td>
-          <td>November 2025</td>
-          <td>424/750</td>
-          <td>24</td>
-          <td><span class="sgpi-badge">6.42</span></td>
-          <td>✅ Successful</td>
-        </tr>
-        <tr>
-          <td>Sem IV (SE, 2019 C)</td>
-          <td>December 2025</td>
-          <td>405/775</td>
-          <td>24</td>
-          <td><span class="sgpi-badge">5.58</span></td>
-          <td>✅ Successful</td>
-        </tr>
-        <tr>
-          <td>Sem V (TE, 2019 C)</td>
-          <td>November 2025</td>
-          <td>407@2/775</td>
-          <td>23</td>
-          <td><span class="sgpi-badge">5.74</span></td>
-          <td>✅ Successful @</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="sem-box rv">
+      <div class="sem-hd">📊 Semester-wise Performance — B.E. EXTC, TSEC Mumbai University</div>
+      <table class="st">
+        <thead><tr><th>Semester</th><th>Exam Period</th><th>Marks Obtained</th><th>Credits</th><th>SGPI</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>Sem I (FE C-Scheme)</td><td>Summer 2024</td><td>385 / 675</td><td>18.00</td><td><span class="sp sp6">6.06</span></td><td>✅ Successful</td></tr>
+          <tr><td>Sem II (FE C-Scheme)</td><td>Winter 2024</td><td>424 / 725</td><td>20.00</td><td><span class="sp sp6">6.43</span></td><td>✅ Successful</td></tr>
+          <tr><td>Sem III (SE, 2019 C)</td><td>November 2025</td><td>424 / 750</td><td>24</td><td><span class="sp sp6">6.42</span></td><td>✅ Successful</td></tr>
+          <tr><td>Sem IV (SE, 2019 C)</td><td>December 2025</td><td>405 / 775</td><td>24</td><td><span class="sp sp5">5.58</span></td><td>✅ Successful</td></tr>
+          <tr><td>Sem V (TE, 2019 C)</td><td>November 2025</td><td>407@2 / 775</td><td>23</td><td><span class="sp sp5">5.74</span></td><td>✅ Successful</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-  <div class="section-inner">
-    <div class="section-label">Technical Work</div>
-    <h2 class="section-title">Projects & Builds</h2>
-    <div class="sep"></div>
-
-    <div class="projects-grid">
-      <div class="project-card fade-in">
-        <div class="project-tag">IoT · Embedded</div>
-        <h3>🌿 Climate Guard System</h3>
-        <p>IoT-enabled environmental monitoring solution using ESP8266 with sensor integration. Real-time cloud monitoring and intelligent alert systems built on Blynk IoT platform — enabling remote environmental awareness.</p>
-        <div class="project-tech">
-          <span class="tech-pill">ESP8266</span>
-          <span class="tech-pill">NodeMCU</span>
-          <span class="tech-pill">BMP280</span>
-          <span class="tech-pill">MQ2</span>
-          <span class="tech-pill">Blynk IoT</span>
+  <div class="sec">
+    <div class="slbl rv">04 / Projects</div>
+    <h2 class="stitle rv">What I've<br>Built</h2>
+    <div class="pg">
+      <div class="pc feat rv">
+        <div>
+          <div class="pn">FEATURED PROJECT</div>
+          <span class="ptag ft">IoT · Cloud · Embedded</span>
+          <h3>🌿 Climate Guard System</h3>
+          <p>IoT environmental monitoring using ESP8266 with BMP280 and MQ2 sensors. Real-time cloud monitoring and intelligent alerts via Blynk IoT — remote environmental awareness from anywhere in the world.</p>
+          <div class="tr"><span class="tc">ESP8266</span><span class="tc">NodeMCU</span><span class="tc">BMP280</span><span class="tc">MQ2</span><span class="tc">Blynk IoT</span><span class="tc">C++</span></div>
         </div>
+        <div class="pv">🌡️</div>
       </div>
-      <div class="project-card fade-in">
-        <div class="project-tag">Wireless · Communication</div>
+      <div class="pc rv">
+        <div class="pn">02</div>
+        <span class="ptag lo">Wireless · LoRa</span>
         <h3>📡 LoRa Communication System</h3>
-        <p>Designed a low-power, long-range wireless communication setup using LoRa modules — targeting reliable data transmission over extended distances with minimal power consumption for remote sensor applications.</p>
-        <div class="project-tech">
-          <span class="tech-pill">LoRa Modules</span>
-          <span class="tech-pill">Arduino</span>
-          <span class="tech-pill">Wireless Comms</span>
-          <span class="tech-pill">Embedded C</span>
-        </div>
+        <p>Low-power long-range wireless communication using LoRa modules — reliable data transmission over extended distances with minimal power consumption for remote sensor deployments.</p>
+        <div class="tr"><span class="tc">LoRa</span><span class="tc">Arduino</span><span class="tc">Embedded C</span><span class="tc">RF Protocol</span></div>
       </div>
-      <div class="project-card fade-in">
-        <div class="project-tag">FPGA · Digital Design</div>
+      <div class="pc rv">
+        <div class="pn">03</div>
+        <span class="ptag fp">FPGA · Digital Design</span>
         <h3>⚙️ FPGA-Based Soda Dispenser</h3>
-        <p>Automated FPGA-based dispensing system using digital logic design concepts. Implemented precise timing control, state machine logic, and automated user interaction handling — demonstrating core VLSI and digital systems skills.</p>
-        <div class="project-tech">
-          <span class="tech-pill">FPGA</span>
-          <span class="tech-pill">Digital Logic</span>
-          <span class="tech-pill">Timing Control</span>
-          <span class="tech-pill">State Machines</span>
-        </div>
+        <p>Automated FPGA dispensing system using digital logic, precise timing control, and state machines — demonstrating core VLSI and digital systems engineering skills.</p>
+        <div class="tr"><span class="tc">FPGA</span><span class="tc">Digital Logic</span><span class="tc">State Machines</span><span class="tc">Timing</span></div>
       </div>
-      <div class="project-card fade-in">
-        <div class="project-tag">Web · Full Stack</div>
+      <div class="pc rv">
+        <div class="pn">04</div>
+        <span class="ptag wb">Web · Full Stack</span>
         <h3>🌐 Personal Portfolio Website</h3>
-        <p>Designed and built a fully responsive personal portfolio from scratch — demonstrating full-stack web development skills including HTML, CSS, JavaScript, and Bootstrap framework integration for a polished, professional online presence.</p>
-        <div class="project-tech">
-          <span class="tech-pill">HTML/CSS</span>
-          <span class="tech-pill">JavaScript</span>
-          <span class="tech-pill">Bootstrap</span>
-          <span class="tech-pill">Figma</span>
-        </div>
+        <p>Fully responsive portfolio built from scratch — showcasing full-stack web development skills across HTML, CSS, JavaScript, and Bootstrap framework.</p>
+        <div class="tr"><span class="tc">HTML/CSS</span><span class="tc">JavaScript</span><span class="tc">Bootstrap</span><span class="tc">Figma</span></div>
       </div>
     </div>
   </div>
@@ -1051,38 +354,81 @@
 
 <!-- RESEARCH -->
 <section id="research">
-  <div class="section-inner">
-    <div class="section-label">Academic Research</div>
-    <h2 class="section-title">Research Synopsis</h2>
-    <div class="sep"></div>
+  <div class="sec">
+    <div class="slbl rv">05 / Research</div>
+    <h2 class="stitle rv">Academic<br>Research</h2>
+    <div class="rcard rv">
+      <div class="ibadge">📄 IEEE FORMAT SYNOPSIS</div>
+      <h3>Semiconductor Materials for Emerging &amp; Integrated Technologies</h3>
+      <div class="rmeta">Arnav Pandita · Dept. of E&TC, Mumbai University (TSEC, India)</div>
+      <p class="rabst"><strong style="color:#fff;">Abstract —</strong> Semiconductor technologies play a major role in modern electronics, artificial intelligence, IoT systems, and communication devices. This synopsis focuses on semiconductor materials and emerging integrated technologies that support low-power, high-speed, and intelligent electronic systems — exploring next-generation communication and embedded applications while emphasizing energy efficiency, miniaturization, and advanced integration.</p>
+      <div class="kws">
+        <span class="kw">Semiconductors</span><span class="kw">IoT</span><span class="kw">FPGA</span><span class="kw">Embedded Systems</span><span class="kw">Nanotechnology</span><span class="kw">Communication Systems</span><span class="kw">Integrated Technologies</span><span class="kw">AI Hardware</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="research-box fade-in">
-      <div class="jio-tag" style="margin-bottom:1rem;">📄 IEEE FORMAT · SYNOPSIS</div>
-      <h3>Semiconductor Materials for Emerging & Integrated Technologies</h3>
-      <div class="research-meta">
-        Arnav Pandita · Dept. of E&TC, Mumbai University (TSEC, India)
+<!-- AI TOOLS -->
+<section id="aitools">
+  <div class="sec">
+    <div class="slbl rv">06 / AI Stack</div>
+    <h2 class="stitle rv">AI Tools I Use<br>Every Day</h2>
+    <p class="ai-intro rv">I actively integrate AI into my engineering workflow — from writing and debugging code to research, design, and content generation. Here's my daily AI toolkit:</p>
+    <div class="aig">
+      <div class="aic chatgpt rv">
+        <span class="ai-logo">🤖</span>
+        <div class="ai-name">ChatGPT</div>
+        <div class="ai-use">Code debugging, concept explanations, report drafting &amp; brainstorming</div>
+        <div class="ai-tags"><span class="aitag">OpenAI</span><span class="aitag">GPT-4o</span><span class="aitag">Coding</span></div>
+        <div><span class="ai-badge">● Daily Use</span></div>
       </div>
-      <p class="research-abstract">
-        <strong style="color:var(--text);">Abstract —</strong> Semiconductor technologies play a major role in modern electronics, artificial intelligence, IoT systems, and communication devices. This research synopsis focuses on semiconductor materials and emerging integrated technologies that support low-power, high-speed, and intelligent electronic systems. The study explores the importance of semiconductor materials in next-generation communication and embedded applications while emphasizing energy efficiency, miniaturization, and advanced integration.
-      </p>
-      <div style="margin-bottom:1.5rem;">
-        <strong style="font-size:0.85rem; color:var(--text); font-family:'Syne',sans-serif;">Key Objectives:</strong>
-        <ul style="margin-top:0.6rem; color:var(--muted); font-size:0.88rem; line-height:1.9; padding-left:1.3rem;">
-          <li>Study semiconductor materials in emerging integrated technologies</li>
-          <li>Understand nanoscale fabrication and integration techniques</li>
-          <li>Explore low-power semiconductor applications in communication & embedded systems</li>
-          <li>Analyze the role of semiconductors in AI and intelligent hardware systems</li>
-        </ul>
+      <div class="aic claude rv">
+        <span class="ai-logo">🧠</span>
+        <div class="ai-name">Claude</div>
+        <div class="ai-use">Research synthesis, long-form writing, technical analysis &amp; documentation</div>
+        <div class="ai-tags"><span class="aitag">Anthropic</span><span class="aitag">Research</span><span class="aitag">Writing</span></div>
+        <div><span class="ai-badge">● Daily Use</span></div>
       </div>
-      <div class="research-keywords">
-        <span class="kw-pill">Semiconductors</span>
-        <span class="kw-pill">IoT</span>
-        <span class="kw-pill">FPGA</span>
-        <span class="kw-pill">Embedded Systems</span>
-        <span class="kw-pill">Nanotechnology</span>
-        <span class="kw-pill">Communication Systems</span>
-        <span class="kw-pill">Integrated Technologies</span>
-        <span class="kw-pill">AI Hardware</span>
+      <div class="aic gemini rv">
+        <span class="ai-logo">✨</span>
+        <div class="ai-name">Gemini</div>
+        <div class="ai-use">Google workspace integration, multimodal tasks &amp; quick lookups</div>
+        <div class="ai-tags"><span class="aitag">Google</span><span class="aitag">Multimodal</span><span class="aitag">Search</span></div>
+        <div><span class="ai-badge">● Daily Use</span></div>
+      </div>
+      <div class="aic copilot rv">
+        <span class="ai-logo">💻</span>
+        <div class="ai-name">GitHub Copilot</div>
+        <div class="ai-use">AI pair programming — autocomplete, suggestions &amp; refactoring in VS Code</div>
+        <div class="ai-tags"><span class="aitag">GitHub</span><span class="aitag">VS Code</span><span class="aitag">Pair Prog.</span></div>
+        <div><span class="ai-badge">● Daily Use</span></div>
+      </div>
+      <div class="aic dalle rv">
+        <span class="ai-logo">🎨</span>
+        <div class="ai-name">DALL·E / Midjourney</div>
+        <div class="ai-use">AI image generation for presentations, project visuals &amp; creative content</div>
+        <div class="ai-tags"><span class="aitag">Image Gen</span><span class="aitag">Design</span><span class="aitag">Creative</span></div>
+        <div><span class="ai-badge">● Daily Use</span></div>
+      </div>
+      <div class="aic perplexity rv">
+        <span class="ai-logo">🔍</span>
+        <div class="ai-name">Perplexity AI</div>
+        <div class="ai-use">Real-time AI-powered research, cited answers &amp; technical deep-dives</div>
+        <div class="ai-tags"><span class="aitag">Research</span><span class="aitag">Citations</span><span class="aitag">Search</span></div>
+        <div><span class="ai-badge">● Daily Use</span></div>
+      </div>
+      <div class="aic grammarly rv">
+        <span class="ai-logo">✍️</span>
+        <div class="ai-name">Grammarly AI</div>
+        <div class="ai-use">AI writing assistant for reports, emails, research papers &amp; documentation</div>
+        <div class="ai-tags"><span class="aitag">Writing</span><span class="aitag">Grammar</span><span class="aitag">Tone</span></div>
+        <div><span class="ai-badge">● Daily Use</span></div>
+      </div>
+      <div class="aic rv" style="border-top:3px solid rgba(255,217,61,0.5);display:flex;flex-direction:column;justify-content:center;align-items:center;background:rgba(255,217,61,0.04)">
+        <span style="font-size:2rem;margin-bottom:0.8rem;opacity:0.5">+</span>
+        <div class="ai-name" style="color:rgba(255,255,255,0.4);font-size:0.9rem">Always Exploring</div>
+        <div class="ai-use">Constantly evaluating new AI tools to stay at the cutting edge</div>
       </div>
     </div>
   </div>
@@ -1090,162 +436,56 @@
 
 <!-- SKILLS -->
 <section id="skills">
-  <div class="section-inner">
-    <div class="section-label">Technical Arsenal</div>
-    <h2 class="section-title">Skills & Tools</h2>
-    <div class="sep"></div>
-
-    <div class="skills-grid fade-in">
-      <div class="skill-group">
-        <h4>Programming</h4>
-        <div class="skill-pills">
-          <span class="skill-pill">Python</span>
-          <span class="skill-pill">Java</span>
-          <span class="skill-pill">C++</span>
-          <span class="skill-pill">C</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Web Development</h4>
-        <div class="skill-pills">
-          <span class="skill-pill">HTML</span>
-          <span class="skill-pill">CSS</span>
-          <span class="skill-pill">JavaScript</span>
-          <span class="skill-pill">Bootstrap</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Databases</h4>
-        <div class="skill-pills">
-          <span class="skill-pill">SQL</span>
-          <span class="skill-pill">MySQL</span>
-          <span class="skill-pill">MongoDB</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Embedded & IoT</h4>
-        <div class="skill-pills">
-          <span class="skill-pill">NodeMCU</span>
-          <span class="skill-pill">Arduino</span>
-          <span class="skill-pill">BMP280</span>
-          <span class="skill-pill">MQ2</span>
-          <span class="skill-pill">LoRa</span>
-          <span class="skill-pill">Blynk IoT</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Analytics</h4>
-        <div class="skill-pills">
-          <span class="skill-pill">Data Analysis</span>
-          <span class="skill-pill">EDA</span>
-          <span class="skill-pill">Data Interpretation</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Tools</h4>
-        <div class="skill-pills">
-          <span class="skill-pill">Git</span>
-          <span class="skill-pill">VS Code</span>
-          <span class="skill-pill">Figma</span>
-        </div>
-      </div>
+  <div class="sec">
+    <div class="slbl rv">07 / Skills</div>
+    <h2 class="stitle rv">Technical<br>Arsenal</h2>
+    <div class="sbento rv">
+      <div class="skb"><h4><span class="sdot" style="background:var(--blue)"></span>Programming</h4><div class="pills"><span class="pill">Python</span><span class="pill">Java</span><span class="pill">C++</span><span class="pill">C</span></div></div>
+      <div class="skb"><h4><span class="sdot" style="background:var(--pink)"></span>Web Dev</h4><div class="pills"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span class="pill">Bootstrap</span></div></div>
+      <div class="skb"><h4><span class="sdot" style="background:var(--green)"></span>Databases</h4><div class="pills"><span class="pill">SQL</span><span class="pill">MySQL</span><span class="pill">MongoDB</span></div></div>
+      <div class="skb"><h4><span class="sdot" style="background:var(--orange)"></span>Embedded &amp; IoT</h4><div class="pills"><span class="pill">NodeMCU</span><span class="pill">Arduino</span><span class="pill">BMP280</span><span class="pill">MQ2</span><span class="pill">LoRa</span><span class="pill">Blynk IoT</span></div></div>
+      <div class="skb"><h4><span class="sdot" style="background:var(--purple)"></span>Analytics</h4><div class="pills"><span class="pill">Data Analysis</span><span class="pill">EDA</span><span class="pill">Interpretation</span></div></div>
+      <div class="skb"><h4><span class="sdot" style="background:var(--teal)"></span>AI Tools</h4><div class="pills"><span class="pill">ChatGPT</span><span class="pill">Claude</span><span class="pill">Gemini</span><span class="pill">Copilot</span><span class="pill">Perplexity</span><span class="pill">DALL·E</span><span class="pill">Grammarly</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
-<section id="certifications">
-  <div class="section-inner">
-    <div class="section-label">Continuous Learning</div>
-    <h2 class="section-title">Certifications</h2>
-    <div class="sep"></div>
-
-    <div class="certs-list fade-in">
-      <a href="https://www.theforage.com/dashboard" target="_blank" class="cert-item">
-        <div class="cert-icon forage">⚡</div>
-        <div class="cert-info">
-          <div class="cert-name">GenAI Powered Data Analytics Job Simulation</div>
-          <div class="cert-provider">Forage · theforage.com</div>
-        </div>
-      </a>
-      <a href="https://www.theforage.com/dashboard" target="_blank" class="cert-item">
-        <div class="cert-icon forage">💻</div>
-        <div class="cert-info">
-          <div class="cert-name">Software Engineering Job Simulation</div>
-          <div class="cert-provider">Forage · theforage.com</div>
-        </div>
-      </a>
-      <a href="https://www.life-global.org/dashboard?page=1" target="_blank" class="cert-item">
-        <div class="cert-icon hp">📊</div>
-        <div class="cert-info">
-          <div class="cert-name">Data Science & Analytics</div>
-          <div class="cert-provider">HP LIFE · life-global.org</div>
-        </div>
-      </a>
-      <a href="https://www.life-global.org/dashboard?page=1" target="_blank" class="cert-item">
-        <div class="cert-icon hp">🤖</div>
-        <div class="cert-info">
-          <div class="cert-name">AI for Beginners</div>
-          <div class="cert-provider">HP LIFE · life-global.org</div>
-        </div>
-      </a>
-      <a href="https://www.life-global.org/dashboard?page=1" target="_blank" class="cert-item">
-        <div class="cert-icon hp">🔐</div>
-        <div class="cert-info">
-          <div class="cert-name">Introduction to Cybersecurity Awareness</div>
-          <div class="cert-provider">HP LIFE · life-global.org</div>
-        </div>
-      </a>
+<!-- CERTS -->
+<section id="certs">
+  <div class="sec">
+    <div class="slbl rv">08 / Certifications</div>
+    <h2 class="stitle rv">Continuous<br>Learning</h2>
+    <div class="cg rv">
+      <a href="https://www.theforage.com/dashboard" target="_blank" class="cc"><div class="cicon f">⚡</div><div><div class="cname">GenAI Powered Data Analytics</div><div class="cby">Forage · Job Simulation</div></div></a>
+      <a href="https://www.theforage.com/dashboard" target="_blank" class="cc"><div class="cicon f">💻</div><div><div class="cname">Software Engineering Job Simulation</div><div class="cby">Forage · Job Simulation</div></div></a>
+      <a href="https://www.life-global.org/dashboard?page=1" target="_blank" class="cc"><div class="cicon h">📊</div><div><div class="cname">Data Science &amp; Analytics</div><div class="cby">HP LIFE · life-global.org</div></div></a>
+      <a href="https://www.life-global.org/dashboard?page=1" target="_blank" class="cc"><div class="cicon h">🤖</div><div><div class="cname">AI for Beginners</div><div class="cby">HP LIFE · life-global.org</div></div></a>
+      <a href="https://www.life-global.org/dashboard?page=1" target="_blank" class="cc"><div class="cicon h">🔐</div><div><div class="cname">Intro to Cybersecurity Awareness</div><div class="cby">HP LIFE · life-global.org</div></div></a>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="section-inner">
-    <div class="contact-card fade-in">
-      <div class="section-label" style="text-align:center; margin-bottom:0.8rem;">Let's Connect</div>
-      <h2>Ready to Collaborate</h2>
-      <p>
-        I'm actively applying for the Jio Institute Summer School and eager to contribute to 
-        cutting-edge research in semiconductors, IoT, and intelligent systems. 
-        Let's build something meaningful together.
-      </p>
-      <div class="contact-links">
-        <a href="mailto:Arnav.pandita011005@gmail.com" class="contact-link email">
-          ✉ Arnav.pandita011005@gmail.com
-        </a>
-        <a href="https://www.linkedin.com/in/arnav-pandita-59a616397" target="_blank" class="contact-link linkedin">
-          ↗ LinkedIn Profile
-        </a>
-        <a href="tel:+919622399321" class="contact-link phone">
-          📞 +91 96223 99321
-        </a>
-      </div>
-    </div>
+  <div class="slbl rv">09 / Contact</div>
+  <h2 class="stitle rv">Let's Work<br>Together</h2>
+  <p class="csub rv">Open to internships, research collaborations &amp; exciting opportunities</p>
+  <a href="mailto:Arnav.pandita011005@gmail.com" class="cblob rv">Arnav.pandita011005@gmail.com ↗</a>
+  <div class="cls rv">
+    <a href="https://www.linkedin.com/in/arnav-pandita-59a616397" target="_blank" class="cl">↗ LinkedIn Profile</a>
+    <a href="tel:+919622399321" class="cl">📞 +91 96223 99321</a>
   </div>
 </section>
 
-<footer>
-  <p>Arnav Pandita · Mumbai, India · B.E. Electronics & Telecommunication Engineering, TSEC</p>
-  <p style="margin-top:6px; font-size:0.7rem;">Applying for Jio Institute Summer School — summer.school@jioinstitute.edu.in</p>
-</footer>
+<footer>Arnav Pandita · B.E. Electronics &amp; Telecommunication · TSEC, Mumbai University · 2023–2027</footer>
 
 <script>
-  // Intersection observer for fade-in animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  // Staggered animation for cards
-  document.querySelectorAll('.why-card, .project-card').forEach((card, i) => {
-    card.style.transitionDelay = `${i * 0.08}s`;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('show'); });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.rv').forEach((el, i) => {
+    el.style.transitionDelay = (i % 8) * 0.06 + 's';
+    obs.observe(el);
   });
 </script>
 </body>
